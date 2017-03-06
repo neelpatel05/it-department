@@ -1,0 +1,13 @@
+{
+  "name": "It Department",
+  "authors": [
+    "neel.patel6573@gmail.com"
+  ],
+  "description": "",
+  "main": "index.htm",
+  "license": "MIT",
+  "homepage": "index.htm",
+  "dependencies": {
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7"
+  }
+}

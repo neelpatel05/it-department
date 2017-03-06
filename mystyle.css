@@ -1,0 +1,89 @@
+body {
+	font-family: 'Roboto';
+	background-color: lightblue;
+}
+
+#heading {
+	font-family: sans-serif;
+	margin-left: 320px;
+	margin-top: 20px;
+	margin-right: 320px;
+}
+
+#refresh {
+	margin-left: 45%;
+	margin-right: 40%;
+	background-color: yellow;
+}
+
+#menu {
+	text-transform:uppercase;
+	margin-top: 30px;
+}
+
+#inline {
+	display: inline;
+
+}
+
+#td1,#td2,#td3,#td4,#td5,#td6 {
+	background-color: yellow;
+	opacity: 0.8;
+	border-radius: 20;
+}
+
+.bvmlogo{
+	margin-top:10px;
+	margin-left: 300px;
+	margin-bottom: 20px;
+	width: 110px;
+	height: 110px;
+	float: left;
+	opacity: 1;
+}
+
+#whole{
+	background-color: #ccff99;
+}
+
+#top {
+	background-color: yellow;
+}
+
+table tr td button {
+	background-color: yellow;
+	display: block;
+	border-radius: 10;
+	text-decoration: none;
+}
+
+table tr td {
+	color: black;
+}
+
+#syllabus{
+	text-decoration: none;
+}
+
+#syllabusview {
+	background-color: #66ffff;
+	opacity: 1;
+}
+
+#timetable {
+	background-color: white;
+}
+
+#innertable {
+	margin-left: 20px;
+}
+
+#GoogleCalendar {
+	width: 100px;
+	height: 100px;
+}
+
+#maps{
+	width: 100%;
+	height: 400px;
+}
