@@ -3,11 +3,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>IT Department Time Table</title>
+	<title>IT Department</title>
 	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
     </script>
     <!-- 2. Use an HTML Import to bring in some elements. -->
     <!-- polymer imports starts-->
+    
     <link rel="import" href="bower_components/paper-badge/paper-badge.html">
     <link rel="import" href="bower_components/paper-behaviors/paper-behaviors.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
@@ -39,22 +40,42 @@
     <link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
     <link rel="import" href="bower_components/paper-tooltip/paper-tooltip.html">
+    <link rel="import" href="/bower_components/google-apis/google-apis.html" />
+    <link rel="import" href="/bower_components/google-maps/google-map.html">
 	<!-- Polymer Imports Ends-->
 	
+	<!--For having social networking button-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--Ends here-->
+
 	<!--Roboto Fonts starts link-->
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<!--Roboto Fonts link ends-->
 
+	<!--Google Maps Link-->
+	<link rel="import" href="google-map.html">
+	<!-- Google Maps Links ends-->
+
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	
 	<style type="text/css">
+		
 		body {
 			font-family: 'Roboto';
 		}
-
+		google-map {
+    		height: 300px;
+  		}
+  		.content{
+  			max-width: auto;
+  			margin: auto;
+  		}
 
 	</style>
 </head>
 <body bgcolor="white">
+<div class="content">
+	<center>
 	<a name="top"></a>
 	<div style="background:lightblue;height: 150px"><font size="5" color="lightOrange">
 		<img src="images/BVM Logo.png" class="bvmlogo"><br>
@@ -65,20 +86,36 @@
 	<div id="menu">
 		<table align="center" border="0px" cellpadding="5">
 			<tr>
-				<td><a href="Computer Organization.html" style="text-decoration: none;color: black;"><paper-button raised id="td1">Computer Organization</paper-button></a><paper-tooltip for="td1" animation-delay="0" position="bottom">This links goes to Computer Organization</paper-tooltip></td>
-				<td><a href="Data Structure.html" style="text-decoration: none;color: black;"><paper-button raised id="td2">Data Structure</paper-button></a><paper-tooltip for="td2" animation-delay="0" position="bottom">This links goes to Data Structure</paper-tooltip></td>
-				<td><a href="NME.html" style="text-decoration: none;color: black;"><paper-button raised id="td3">Numerical Methods for engg.</paper-button></a><paper-tooltip for="td3" animation-delay="0" position="bottom">This links goes to Numerical methods for enginnering</paper-tooltip></td>
-				<td><a href="Web Technology.html" style="text-decoration: none;color: black;"><paper-button raised id="td4">Web Technology</paper-button></a><paper-tooltip for="td4" animation-delay="0" position="bottom">This links goes to Web Technology</paper-tooltip></td>
-				<td><a href="Operating System.html" style="text-decoration: none;color: black;"><paper-button raised id="td5">Operating System</paper-button></a><paper-tooltip for="td5" animation-delay="0" position="bottom">This links goes to Operating System</paper-tooltip></td>
-				<td><a href="Engineering Economics.html" style="text-decoration: none;color: black;"><paper-button raised id="td6">Engineering Economics</paper-button></a><paper-tooltip for="td6" animation-delay="0" position="bottom">This links goes to Enginnering Economics and Mathematics</paper-tooltip></td>				
+				<td><a href="Computer Organization.html" style="text-decoration: none;color: black;">
+				<paper-button raised id="td1" onclick="toast1.open()">Computer Organization</paper-button>
+				</a><paper-tooltip for="td1" animation-delay="0" position="bottom">This links goes to Computer Organization</paper-tooltip></td>
+
+				<td><a href="Data Structure.html" style="text-decoration: none;color: black;"><paper-button raised id="td2" onclick="toast2.open()">Data Structure</paper-button></a><paper-tooltip for="td2" animation-delay="0" position="bottom">This links goes to Data Structure</paper-tooltip></td>
+
+				<td><a href="NME.html" style="text-decoration: none;color: black;"><paper-button raised id="td3" onclick="toast3.open()">Numerical Methods for engg.</paper-button></a><paper-tooltip for="td3" animation-delay="0" position="bottom">This links goes to Numerical methods for enginnering</paper-tooltip></td>
+
+				<td><a href="Web Technology.html" style="text-decoration: none;color: black;"><paper-button raised id="td4" onclick="toast4.open()">Web Technology</paper-button></a><paper-tooltip for="td4" animation-delay="0" position="bottom">This links goes to Web Technology</paper-tooltip></td>
+
+				<td><a href="Operating System.html" style="text-decoration: none;color: black;"><paper-button raised id="td5" onclick="toast5.open()">Operating System</paper-button></a><paper-tooltip for="td5" animation-delay="0" position="bottom">This links goes to Operating System</paper-tooltip></td>
+
+				<td><a href="Engineering Economics.html" style="text-decoration: none;color: black;"><paper-button raised id="td6" onclick="toast6.open()">Engineering Economics</paper-button></a><paper-tooltip for="td6" animation-delay="0" position="bottom">This links goes to Enginnering Economics and Mathematics</paper-tooltip></td>	
+
+				<!--PAPER TOAST-->
+				<paper-toast id="toast1" class="fit-bottom" text="Opening Computer Organization"></paper-toast>
+				<paper-toast id="toast2" class="fit-bottom" text="Opening Data Structure"></paper-toast>
+				<paper-toast id="toast3" class="fit-bottom" text="Opening Numerical Methods for Engineering"></paper-toast>
+				<paper-toast id="toast4" class="fit-bottom" text="Opening Web Technology"></paper-toast>
+				<paper-toast id="toast5" class="fit-bottom" text="Opening Operating System"></paper-toast>
+				<paper-toast id="toast6" class="fit-bottom" text="Opening Engineering Economoics and Mathematics"></paper-toast>
+				<!--Paper Toast Ends-->			
 			</tr>
 		</table>
 	</div>
-	<font size="6" color="lightred"><marquee direction="left" scrollamount="10" scrolldelay="80" loop="10">IT Department Time Table</marquee></font>
+	<font size="5"><marquee direction="left" scrollamount="10" scrolldelay="80" loop="10" id="marquee">IT Department Time Table</marquee></font>
 	<br>
 	<div id="timetableid">
 	<center>
-		</center><table border="5" align="center" cellpadding="10" cellspacing="0" bgcolor="lightyellow" width="1250" id="timetable">
+		</center><table border="5" align="center" cellpadding="10" cellspacing="0" bgcolor="lightyellow"  id="timetable" style="width: 100%;">
 		
 		<tbody><tr >
 			<th >Timing</th>
@@ -111,7 +148,7 @@
 
 		<tr>
 			<th>11:00 - 12:00</th>
-			<td>IT-209</td>
+			<td>IT-209 WTP</td>
 			<td rowspan="2">IT206-E&nbsp;&nbsp;IT207-A<br>IT208-B&nbsp;&nbsp;IT209-C</td>
 			<td rowspan="2">IT206-D&nbsp;&nbsp;IT207-E<br>IT208-A&nbsp;&nbsp;IT209-B</td>
 			<td>-----</td>
@@ -122,8 +159,8 @@
 		<tr>
 			<th>12:00 - 1:00</th>
 			<td rowspan="2">IT206-A&nbsp;&nbsp;IT207-B<br>IT208-C&nbsp;&nbsp;IT209-D</td>
-			<td>IT 207</td>
-			<td>MA 203</td>
+			<td>IT 207 OS</td>
+			<td>MA 203 EEM</td>
 			<td>-----</td>
 		</tr>
 
@@ -131,36 +168,36 @@
 			<th>1:00 - 2:00</th>
 			<td>-----</td>
 			<td>-----</td>
-			<td>IT 206</td>
-			<td>IT 207</td>
+			<td>IT 206 DS</td>
+			<td>IT 207 NME</td>
 			<td>-----</td>
 		</tr>
 
 		<tr>
 			<th>2:00 - 3:00</th>
-			<td>MA 203</td>
-			<td>MA 203</td>
-			<td>IT 209</td>
-			<td>IT 205</td>
-			<td>IT 208</td>
+			<td>MA 203 EEM</td>
+			<td>MA 203 EEM</td>
+			<td>IT 209 WTP</td>
+			<td>IT 205 CO</td>
+			<td>IT 208 OS</td>
 			<td>-----</td>
 		</tr>
 
 		<tr>
 			<th>3:00 - 4:00</th>
-			<td>IT 208</td>
-			<td>IT 206</td>
-			<td>IT 206</td>
-			<td>IT 209</td>
-			<td>IT 205</td>
+			<td>IT 208 OS</td>
+			<td>IT 206 DS</td>
+			<td>IT 206 DS</td>
+			<td>IT 209 WTP</td>
+			<td>IT 205 CO</td>
 			<td>-----</td>
 		</tr>
 
 		<tr>
 			<th>4:00 - 5:00</th>
-			<td>IT 207</td>
-			<td>IT 207</td>
-			<td>IT 208</td>
+			<td>IT 207 NME</td>
+			<td>IT 207 NME</td>
+			<td>IT 208 OS</td>
 			<td rowspan="2">IT206-C&nbsp;&nbsp;IT207-D<br>IT208-E&nbsp;&nbsp;IT209-A</td>
 			<td rowspan="2">IT206-B&nbsp;&nbsp;IT207-C<br>IT208-D&nbsp;&nbsp;IT209-E</td>
 			<td>-----</td>
@@ -168,9 +205,9 @@
 
 		<tr>
 			<th>5:00 - 6:00</th>
-			<td>IT 206</td>
-			<td>IT 208</td>
-			<td>IT 205</td>
+			<td>IT 206 DS</td>
+			<td>IT 208 OS</td>
+			<td>IT 205 CO</td>
 			<td>-----</td>
 		</tr>
 		
@@ -182,12 +219,31 @@
 	</div>
 	<!--<hr color="pink" size="4">-->
 	<div id="syllabusview">
-	<br><font size="6" color="red"><marquee direction="right" scrollamount="10" scrolldelay="80" loop="10">Holidays in India</marquee></font>
+	<br>
+	<font size="6" color="red"><marquee direction="right" scrollamount="10" scrolldelay="80" loop="10">Holidays in India</marquee></font>
+	
 	<br><br>
+	
 	<center>
 	<iframe src="https://calendar.google.com/calendar/embed?title=Holidays%20in%20India&amp;height=400&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=en.indian%23holiday%40group.v.calendar.google.com&amp;color=%23B1440E&amp;ctz=Asia%2FCalcutta" style="border:solid 1px #777;margin-top: 10px;margin-bottom: 20px;" width="600" height="400" frameborder="0" scrolling="yes"></iframe></center>
 	</div>
+	
+	<div>
+		<h4 align="center">Our Department</h4>
+		<google-map fit-to-marker api-key="AIzaSyAqHUOumz0lVfh-wpT3WigtTsUFbajwCJM">
+  			<google-map-marker latitude="37.78" longitude="-122.4" draggable="true"></google-map-marker>
+		</google-map>
+	</div>
 	<!--<hr size="4" color="pink">-->
-	<font size="5" color="red"><center><h4>Made By : Neel Patel</h4><h5>IT Department</h5>
-
-</body></html>
+	<div>
+		<iframe src="https://friendlychat-1859c.firebaseapp.com/" id="iframe"></iframe>
+	</div>
+	<font size="5" color="black"><center><p>Neel Patel</p></center></font>
+	<a href="https://www.facebook.com/profile.php?id=100006295092407" class="fa fa-facebook" target="_blank"></a>
+	<a href="https://twitter.com/neelpatel_5" class="fa fa-twitter" target="_blank"></a>
+	<a href="https://www.instagram.com/neelpatel05/" class="fa fa-instagram" target="_blank"></a>
+	<a href="https://www.linkedin.com/in/neel-p-09795610a/" class="fa fa-linkedin" target="_blank"></a>
+	</center>
+</div>
+</body>
+</html>
