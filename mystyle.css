@@ -21,6 +21,8 @@ body {
 	background-color: yellow;
 }
 
+
+
 #menu {
 	text-transform:uppercase;
 	margin-top: 30px;
@@ -37,6 +39,20 @@ body {
 	border-radius: 20;
 	display: block;
 }
+
+#td0:hover,#td1:hover,#td2:hover,#td3:hover,#td4:hover,#td5:hover,#td6:hover {
+	background-color: #80ccff;
+}
+
+
+#td0:active,#td1:active,#td2:active,#td3:active,#td4:active,#td5:active,#td6:active {
+	background-color: #3366ff;
+}
+
+#td0:visited,#td1:visited,#td2:visited,#td3:visited,#td4:visited,#td5:visited,#td6:visited {
+	background-color: #3366ff;
+}
+
 
 .bvmlogo{
 	margin-top:10px;
@@ -80,9 +96,14 @@ table tr td {
 	background-color: white;
 }
 
+.timetabletd:hover {
+	background-color: #ff9933;
+	
+}
+
 #innertable {
 	margin-left: 20px;
-	margin-top: 40px;
+	margin-top: 60px;
 }
 
 #GoogleCalendar {
@@ -134,4 +155,35 @@ table tr td {
 	color: white;
 	margin-left: 10px;
 	margin-bottom: 30px;
+}
+
+
+.animatedbtn {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.animatedbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.animatedbtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -5px;
+  transition: 0.5s;
+}
+
+.animatedbtn:hover span {
+  padding-right: 25px;
+}
+
+.animatedbtn:hover span:after {
+  opacity: 1;
+  right: 0;
 }
