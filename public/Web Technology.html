@@ -1,0 +1,277 @@
+<html>
+  <head>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
+    </script>
+    <!-- 2. Use an HTML Import to bring in some elements. -->
+    <!-- polymer imports starts-->
+    <link rel="import" href="bower_components/paper-badge/paper-badge.html">
+    <link rel="import" href="bower_components/paper-behaviors/paper-behaviors.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="bower_components/paper-behavior/paper-dialog-behavior.html">
+    <link rel="import" href="bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-listbox/paper-listbox.html">
+    <link rel="import" href="bower_components/paper-material/paper-material.html">
+    <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+    <link rel="import" href="bower_components/paper-menu-button/paper-menu-button.html">
+    <link rel="import" href="bower_components/paper-progress/paper-progress.html">
+    <link rel="import" href="bower_components/paper-radio-button/paper-radio-button.html">
+    <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html">
+    <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
+    <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+    <link rel="import" href="bower_components/paper-slider/paper-slider.html">
+    <link rel="import" href="bower_components/paper-spinner/paper-spinner.html">
+    <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+    <link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-tooltip/paper-tooltip.html">
+  <!-- Polymer Imports Ends-->
+  
+  <!--Roboto Fonts starts link-->
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <!--Roboto Fonts link ends-->
+
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <style type="text/css">
+    body {
+      font-family: 'Roboto';
+    }
+
+
+  </style>
+  </head>
+<body bgcolor="#99ccff">
+<center>
+<div id="menu">
+    <table align="center" border="0px" cellpadding="5">
+      <tr>
+
+        <td><a href="index.html" style="text-decoration: none;color: black;" id="td0"><paper-button>Back to Home</paper-button></a><paper-tooltip for="td1" animation-delay="0" position="bottom">This links goes to Home Page</paper-tooltip></td>
+
+        <td><a href="Computer Organization.html" style="text-decoration: none;color: black;">
+        <paper-button raised id="td1" onclick="toast1.open()">Computer Organization</paper-button>
+        </a><paper-tooltip for="td1" animation-delay="0" position="bottom">This links goes to Computer Organization</paper-tooltip></td>
+
+        <td><a href="Data Structure.html" style="text-decoration: none;color: black;"><paper-button raised id="td2" onclick="toast2.open()">Data Structure</paper-button></a><paper-tooltip for="td2" animation-delay="0" position="bottom">This links goes to Data Structure</paper-tooltip></td>
+
+        <td><a href="NME.html" style="text-decoration: none;color: black;"><paper-button raised id="td3" onclick="toast3.open()">Numerical Methods for engg.</paper-button></a><paper-tooltip for="td3" animation-delay="0" position="bottom">This links goes to Numerical methods for enginnering</paper-tooltip></td>
+
+        <td><a href="Web Technology.html" style="text-decoration: none;color: black;"><paper-button raised id="td4" onclick="toast4.open()">Web Technology</paper-button></a><paper-tooltip for="td4" animation-delay="0" position="bottom">This links goes to Web Technology</paper-tooltip></td>
+
+        <td><a href="Operating System.html" style="text-decoration: none;color: black;"><paper-button raised id="td5" onclick="toast5.open()">Operating System</paper-button></a><paper-tooltip for="td5" animation-delay="0" position="bottom">This links goes to Operating System</paper-tooltip></td>
+
+        <td><a href="Engineering Economics.html" style="text-decoration: none;color: black;"><paper-button raised id="td6" onclick="toast6.open()">Engineering Economics</paper-button></a><paper-tooltip for="td6" animation-delay="0" position="bottom">This links goes to Enginnering Economics and Mathematics</paper-tooltip></td> 
+
+        <!--PAPER TOAST-->
+        <paper-toast id="toast1" class="fit-bottom" text="Opening Computer Organization"></paper-toast>
+        <paper-toast id="toast2" class="fit-bottom" text="Opening Data Structure"></paper-toast>
+        <paper-toast id="toast3" class="fit-bottom" text="Opening Numerical Methods for Engineering"></paper-toast>
+        <paper-toast id="toast4" class="fit-bottom" text="Opening Web Technology"></paper-toast>
+        <paper-toast id="toast5" class="fit-bottom" text="Opening Operating System"></paper-toast>
+        <paper-toast id="toast6" class="fit-bottom" text="Opening Engineering Economoics and Mathematics"></paper-toast>
+        <!--Paper Toast Ends-->     
+      </tr>
+    </table>
+  </div>
+<div id="innertable">
+  <table border="0" cellpadding="10" cellspacing="10" bgcolor="orange" width="800" id="syllabus">
+    <tbody><tr>
+      <th>Subject Id/Name</th>
+      <th>View PDF</th>
+      <th>Download PDF</th>
+      <th>Practical List</th>
+      <th>Assignments</th>
+      <th>Question Banks</th>
+    </tr>
+
+    <tr>
+      <td>IT 208 - Web technology and programming</td>
+      <td><center><button><a href="https://ittt-f6aee.firebaseapp.com/Web%20Technology.pdf" target="_blank" style="text-decoration: none;color: black;">View PDF</a></button></center></td>
+      <td><center><button><a href="https://ittt-f6aee.firebaseapp.com/Web%20Technology.pdf" target="_blank" download="IT 208 - Web technology and programming" style="text-decoration: none;color: black;">Download</a></button></center></td>
+      <td><center><button><a href="https://ittt-f6aee.firebaseapp.com/web%20prac.pdf" target="_blank" download="IT 209 - Web Technology" style="text-decoration: none;color: black;">Download</a></button></center></td>
+      <td><center><button><a href="Assignements/WAD Assignment.pdf" target="_blank" download="IT 205 - Computer Organization" style="text-decoration: none;color: black;">Download</a></button></center></td>
+      <td><center><button><a href="Question Bank/Question Bank WTP.pdf" target="_blank" download="IT 205 - Computer Organization" style="text-decoration: none;color: black;">Download</a></button></center></td>
+    </tr>
+  </tbody></table>
+  </div>
+  </center>
+  <br><br><br><br><br>
+  <table align="center">
+  <tr>
+  <td>
+  <div class="nounderline" style="text-decoration: none;">
+    
+    <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          Into to Web
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/1-Introduction to Web.pdf" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/1-Introduction to Web.pdf" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+  </td>
+  
+  <td>
+    <div>
+      <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          Effective Web Design
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/2-Designing an Effective Web Site.pdf" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/2-Designing an Effective Web Site.pdf" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+    </div>
+  </td>
+
+  <td>
+    <div>
+      <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          HTML
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/3-HTML.pdf" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/3-HTML.pdf" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+    </div>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <div>
+      <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          XHTML
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/4-XHTML" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/4-XHTML" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+    </div>
+  </td>
+
+  <td>
+    <div>
+      <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          CSS
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/5-CSS.pdf" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/5-CSS.pdf" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+    </div>
+  </td>
+
+  <td>
+    <div>
+      <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          JavaScript
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/6-JavaScript.pdf" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/6-JavaScript.pdf" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+    </div>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <div>
+      <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          DHTML
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/7-DHTML.pdf" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/7-DHTML.pdf" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+    </div>
+  </td>
+
+  <td>
+    <div>
+      <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          XML
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/8-XML.pdf" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/8-XML.pdf" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+    </div>
+  </td>
+
+  <td>
+    <div>
+      <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          XSL and XSLT
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/9-XSL & XSLT.pdf" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/9-XSL & XSLT.pdf" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+    </div>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <div>
+      <div style="width: 200px;height: 200px;">
+      <paper-card raised>
+        <div class="card-content" align="center">
+          PHP
+        </div>
+        <div class="card-actions" align="center">
+          <a href="ppts/11-PHP.pdf" style="text-decoration: none;"><paper-button>View</paper-button></a>
+          <a href="ppts/11-PHP.pdf" download="ppt" style="text-decoration: none;"><paper-button>Download</paper-button></a>
+        </div>
+      </paper-card>
+    </div>
+    </div>
+  </td>
+
+  </tr>
+  </div>
+  </body>
+</html>
