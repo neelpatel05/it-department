@@ -71,6 +71,7 @@
   		}*/
 
 	</style>
+	<title>It Department</title>
 </head>
 <body bgcolor="white">
 <div class="content">
@@ -81,7 +82,6 @@
 		<img src="images/BVM Logo.png" class="bvmlogo"><br>
 		<h2 id="heading"><center>BVM Engineering College</center></h2></font>
 		<img src="images/gtu.png" class="gtulogo">-->
-	</div>
 	<div id="whole">
 	<div id="menu">
 		<table align="center" border="0px" cellpadding="5">
@@ -110,6 +110,36 @@
 			</tr>
 		</table>
 	</div>
+
+	<div class="slideshow-container">
+  		<div class="mySlides fade">
+  		  <div class="numbertext">1 / 3</div>
+ 		   <img src="images/1.jpg" style="width:100%">
+  		  <div class="text">INFORMATION TECHNOLOGY DEPARTMENT</div>
+ 	 	</div>
+
+  		<div class="mySlides fade">
+  	  		<div class="numbertext">2 / 3</div>
+  	  		<img src="images/2.jpg" style="width:100%">
+  	  		<div class="text">Industrial visit to BSNL Ahmedabad</div>
+ 	 	</div>
+
+ 		<div class="mySlides fade">
+ 	   		<div class="numbertext">3 / 3</div>
+ 	   		<img src="images/3.jpg" style="width:100%">
+ 	   		<div class="text">Faculties</div>
+ 		</div>
+
+  		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
 	<br>
 	<div id="timetableid">
 	<table border="5" align="center" cellpadding="10" cellspacing="0" bgcolor="lightyellow"  id="timetable" style="width: 100%;">
@@ -221,8 +251,7 @@
 	
 	<br><br>
 	
-	<center>
-	<iframe src="https://calendar.google.com/calendar/embed?title=Holidays%20in%20India&amp;height=400&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=en.indian%23holiday%40group.v.calendar.google.com&amp;color=%23B1440E&amp;ctz=Asia%2FCalcutta" style="border:solid 1px #777;margin-top: 10px;margin-bottom: 20px;" width="600" height="400" frameborder="0" scrolling="yes"></iframe></center>
+	<center><iframe src="https://calendar.google.com/calendar/embed?title=Holidays%20in%20India&amp;height=400&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=en.indian%23holiday%40group.v.calendar.google.com&amp;color=%23B1440E&amp;ctz=Asia%2FCalcutta" style="border:solid 1px #777;margin-top: 10px;margin-bottom: 20px;" width="600" height="400" frameborder="0" scrolling="yes"></iframe></center>
 	</div>
 	
 	<div>
@@ -236,12 +265,55 @@
 		<iframe src="https://friendlychat-1859c.firebaseapp.com/" id="iframe"></iframe>
 	</div>
 	<center>
-	<font size="5" color="black"><center><p>Neel Patel</p></center></font>
-	<a href="https://www.facebook.com/profile.php?id=100006295092407" class="fa fa-facebook" target="_blank"></a>
-	<a href="https://twitter.com/neelpatel_5" class="fa fa-twitter" target="_blank"></a>
-	<a href="https://www.instagram.com/neelpatel05/" class="fa fa-instagram" target="_blank"></a>
-	<a href="https://www.linkedin.com/in/neel-p-09795610a/" class="fa fa-linkedin" target="_blank"></a>
-	</center>
+	<font size="5" color="black"><center><p>Neel Patel</p></center></font><a href="https://github.com/neelpatel05?tab=repositories" target="_blank"><img src="images/GitHub-Mark/PNG/GitHub-Mark-64px.png" width="30px" style="background-color: white;border-radius: 50%;margin-top: 5px;margin-bottom: 30px;"></a></center>
 </div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+<script>
+	var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "block"; 
+    setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+
+</script>
 </body>
 </html>
