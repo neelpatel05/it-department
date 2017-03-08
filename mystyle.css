@@ -38,6 +38,7 @@ body {
 	opacity: 0.8;
 	border-radius: 20;
 	display: block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #td0:hover,#td1:hover,#td2:hover,#td3:hover,#td4:hover,#td5:hover,#td6:hover {
@@ -96,9 +97,11 @@ table tr td {
 	background-color: white;
 }
 
+
+
 .timetabletd:hover {
 	background-color: #ff9933;
-	
+
 }
 
 #innertable {
@@ -187,3 +190,7 @@ table tr td {
   opacity: 1;
   right: 0;
 }
+
+
+-webkit-transition: width 2s, height 4s;
+    transition: width 2s, height 4s;
