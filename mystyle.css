@@ -1,7 +1,11 @@
 body {
 	font-family: 'Roboto';
-	background-color: lightblue;
+	background-color: #BDBDBD;
 	width: 100%;
+}
+
+#content {
+	margin-top: 0px;
 }
 
 #marquee {
@@ -57,16 +61,17 @@ body {
 
 .bvmlogo{
 	margin-top:10px;
-	margin-left: 300px;
+	margin-left: 250px;
 	margin-bottom: 20px;
-	width: 110px;
-	height: 110px;
+	width: 800px;
+	height: 200px;
 	float: left;
 	opacity: 1;
 }
 
 #whole{
 	background-color: #ccff99;
+	margin-top: 0px;
 }
 
 #top {
@@ -97,6 +102,9 @@ table tr td {
 	background-color: white;
 }
 
+#timetableid {
+	margin-top: 30px;
+}
 
 
 .timetabletd:hover {
@@ -190,7 +198,3 @@ table tr td {
   opacity: 1;
   right: 0;
 }
-
-
--webkit-transition: width 2s, height 4s;
-    transition: width 2s, height 4s;
