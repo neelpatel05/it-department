@@ -59,11 +59,11 @@ body {
 
 .bvmlogo{
 	margin-top:10px;
-	margin-left: 250px;
-	margin-bottom: 20px;
+	/*margin-left: 250px;*/
+	margin-bottom: 10px;
 	width: 800px;
 	height: 200px;
-	float: left;
+	/*float: left;*/
 	opacity: 1;
 }
 
