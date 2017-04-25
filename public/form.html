@@ -1,0 +1,317 @@
+			<html>
+				<head>
+					<style>
+						
+			@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+			
+			* {margin: 0; padding: 0;}
+
+			html {
+				height: 100%;
+				
+				background: 
+					linear-gradient(rgba(255, 94, 94, 0.6), rgba(148, 255, 19, 0.6));
+			}
+
+			body {
+				font-family: montserrat, arial, verdana;
+			}
+			#collegeForm {
+				width: 600px;
+				margin: 50px auto;
+				text-align: center;
+				position: relative;
+			}
+			#collegeForm fieldset {
+				background: white;
+				border: 0 none;
+				border-radius: 3px;
+				box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+				padding: 20px 30px;
+				box-sizing: border-box;
+				width: 80%;
+				margin: 0 10%;
+				position: relative;
+			}
+			#collegeForm fieldset:not(:first-of-type) {
+				display: none;
+			}
+			#collegeForm input, #collegeForm textarea {
+				padding: 15px;
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				margin-bottom: 10px;
+				width: 100%;
+				box-sizing: border-box;
+				font-family: montserrat;
+				color: #2C3E50;
+				font-size: 13px;
+			}
+			#collegeForm .action-button {
+				width: 100px;
+				background: #27AE60;
+				font-weight: bold;
+				color: white;
+				border: 0 none;
+				border-radius: 1px;
+				cursor: pointer;
+				padding: 10px 5px;
+				margin: 10px 5px;
+			}
+			#collegeForm .action-button:hover, #collegeForm .action-button:focus {
+				box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+			}
+			.fs-header{
+				font-size: 35px;
+				color: #fff;
+				margin-top: 20px;
+			}
+			.fs-title {
+				font-size: 20px;
+				color: #2C3E50;
+				margin-bottom: 10px;
+			}
+			.fs-subtitle {
+				font-weight: normal;
+				font-size: 17px;
+				color: #666;
+				margin-bottom: 20px;
+			}
+			
+			#progressbar {
+				margin-bottom: 30px;
+				overflow: hidden;
+				counter-reset: step;
+			}
+			#progressbar li {
+				list-style-type: none;
+				color: white;
+				text-transform: uppercase;
+				font-size: 11px;
+				width: 33.33%;
+				float: left;
+				position: relative;
+			}
+			#progressbar li:before {
+				content: counter(step);
+				counter-increment: step;
+				width: 20px;
+				line-height: 20px;
+				display: block;
+				font-size: 10px;
+				color: #333;
+				background: white;
+				border-radius: 3px;
+				margin: 0 auto 5px auto;
+			}
+			#progressbar li:after {
+				content: '';
+				width: 100%;
+				height: 2px;
+				background: white;
+				position: absolute;
+				left: -50%;
+				top: 9px;
+				z-index: -1;
+			}
+			#progressbar li:first-child:after {
+				content: none; 
+			}
+			#progressbar li.active:before,  #progressbar li.active:after{
+				background: #27AE60;
+				color: white;
+				font-size:18px;
+				padding:2px;
+			}
+
+					</style>
+				</head>
+				<body>
+				<center><h1 class="fs-header">Sign Up</h1></center>
+			<form id="collegeForm" action="#">
+			  <ul id="progressbar">
+				<li class="active">Account Setup</li>
+				<li>Branch Info.</li>
+				<li>Personal Details</li>
+			  </ul>
+			  <fieldset>
+				<h2 class="fs-title">Create your account</h2>
+				<h3 class="fs-subtitle">Step 1</h3>
+				<input type="email" name="email" id="email" placeholder="Email" required/>
+				<input type="password" name="pass" id="password" placeholder="Password" required/>
+				<input type="password" name="cpass" placeholder="Confirm Password" required />
+				<input type="button" name="next" class="next action-button" value="Next" />
+			  </fieldset>
+			  <fieldset>
+				<h2 class="fs-title">Branch Info.</h2>
+				<h3 class="fs-subtitle">Step 2</h3>
+				<input type="text" name="branch" id="branch" placeholder="Dept." required/>
+				<input type="text" name="ID" id="id" placeholder="ID No." required/>
+				<input type="text" name="Year" id="year" placeholder="Current Year" required/>
+				<input type="button" name="previous" class="previous action-button" value="Previous" />
+				<input type="button" name="next" class="next action-button" value="Next" />
+			  </fieldset>
+			  <fieldset>
+				<h2 class="fs-title">Personal Details</h2>
+				  <h3 class="fs-subtitle">Step 3</h3>
+				<input type="text" name="fname" id="fname" placeholder="First Name" requried/>
+				<input type="text" name="lname" id="lname" placeholder="Last Name" required/>
+				<input type="text" name="phone" id="phone" placeholder="Phone" required/>
+				<textarea name="address" id="address" placeholder="Address"></textarea>
+				<input type="button" name="previous" class="previous action-button" value="Previous" />
+				<input type="submit" name="submit" class="submit action-button" onclick="createUser(); send();" value="Submit" />
+			  </fieldset>
+			</form>
+			<script src="https:////cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>	
+			<script>
+		var current_fs, next_fs, previous_fs; 
+		var left, opacity, scale; 
+		var animating; 
+
+		$(".next").click(function(){
+			if(animating) return false;
+			animating = true;
+
+			current_fs = $(this).parent();
+			next_fs = $(this).parent().next();
+
+			$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+			$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("change");
+			next_fs.show(); 
+
+			current_fs.animate({opacity: 0}, {
+				step: function(now, mx) {
+					
+					scale = 1 - (1 - now) * 0.2;
+				
+					left = (now * 50)+"%";
+					
+					opacity = 1 - now;
+					current_fs.css({
+				'transform': 'scale('+scale+')',
+				'position': 'absolute'
+			  });
+					next_fs.css({'left': left, 'opacity': opacity});
+				}, 
+				duration: 800, 
+				complete: function(){
+					current_fs.hide();
+					animating = false;
+				}, 
+			
+				easing: 'easeInOutBack'
+			});
+		});
+
+		$(".previous").click(function(){
+			if(animating) return false;
+			animating = true;
+
+			current_fs = $(this).parent();
+			previous_fs = $(this).parent().prev();
+
+			
+			$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+		
+			previous_fs.show(); 
+			
+			current_fs.animate({opacity: 0}, {
+				step: function(now, mx) {
+					
+					scale = 0.8 + (1 - now) * 0.2;
+					
+					left = ((1-now) * 50)+"%";
+					
+					opacity = 1 - now;
+					current_fs.css({'left': left});
+					previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+				}, 
+				duration: 800, 
+				complete: function(){
+					current_fs.hide();
+					animating = false;
+				}, 
+			
+				easing: 'easeInOutBack'
+			});
+		});
+
+		$(".submit").click(function(){
+			return false;
+		})
+					</script>
+
+
+		<script type="text/javascript">
+			var email=document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+
+			function createUser() {
+
+  			var email=document.getElementById("email").value;
+  			var password = document.getElementById("password").value;
+
+  			firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+  					
+  					alert("Your Account has been succesfully created");
+  					window.location.replace("index.html");
+  		
+  					}).catch(function(error) {
+       
+        			var errorCode = error.code;
+        			var errorMessage = error.message;
+        			if (errorCode == 'auth/weak-password') {
+          			alert('The password is too weak.');
+        			} else {
+          			alert(errorMessage);
+        			}
+        			console.log(error);
+      			});
+			}
+
+			function send(){
+				  var email = document.getElementById("email");
+				  var password = document.getElementById("password");
+				  var id = document.getElementById("id");
+				  var branch = document.getElementById("branch")
+				  var year = document.getElementById("year");
+				  var fname = document.getElementById("fname");
+				  var lname = document.getElementById("lname");
+				  var phone = document.getElementById("phone");
+				  var address = document.getElementById("address");
+				  var rootRef = firebase.database().ref();
+				  var storesRef = rootRef.child('Data');
+				  var newStoreRef = storesRef.push();
+				  newStoreRef.set({
+				    emailid: email.value,
+				    first_Name: fname.value,
+				    last_name: lname.value,
+				    id_no: id.value,
+				    Year_no: year.value,
+				    pass: password.value,
+				    Mobile_No: phone.value,
+				    add: address.value,
+				    Branch_id: branch.value,
+				  });
+				  alert("Thank you for Entering Data!!!!");
+			}
+
+
+		</script>
+			<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+			<script>
+			  // Initialize Firebase
+			  var config = {
+			    apiKey: "AIzaSyBcp30eJQ4m7PNGP7rx34wWVCAPJNQgp4s",
+			    authDomain: "bvmit-22f20.firebaseapp.com",
+			    databaseURL: "https://bvmit-22f20.firebaseio.com",
+			    projectId: "bvmit-22f20",
+			    storageBucket: "bvmit-22f20.appspot.com",
+			    messagingSenderId: "670854156330"
+			  };
+			  firebase.initializeApp(config);
+			</script>
+				</body>
+			</html>

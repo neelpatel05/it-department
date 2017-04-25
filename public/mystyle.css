@@ -1,8 +1,10 @@
 body {
 	font-family: 'Roboto';
-	background-color: lightblue;
+	background-color: #BDBDBD;
 	width: 100%;
 }
+
+
 
 #marquee {
 	text-decoration: blink;
@@ -12,7 +14,7 @@ body {
 	font-family: sans-serif;
 	margin-left: 320px;
 	margin-top: 20px;
-	margin-right: 320px;
+	margin-right: 300px;
 }
 
 #refresh {
@@ -20,6 +22,8 @@ body {
 	margin-right: 40%;
 	background-color: yellow;
 }
+
+
 
 #menu {
 	text-transform:uppercase;
@@ -36,20 +40,36 @@ body {
 	opacity: 0.8;
 	border-radius: 20;
 	display: block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+#td0:hover,#td1:hover,#td2:hover,#td3:hover,#td4:hover,#td5:hover,#td6:hover {
+	background-color: #80ccff;
+}
+
+
+#td0:active,#td1:active,#td2:active,#td3:active,#td4:active,#td5:active,#td6:active {
+	background-color: #3366ff;
+}
+
+#td0:visited,#td1:visited,#td2:visited,#td3:visited,#td4:visited,#td5:visited,#td6:visited {
+	background-color: #3366ff;
+}
+
 
 .bvmlogo{
 	margin-top:10px;
-	margin-left: 300px;
-	margin-bottom: 20px;
-	width: 110px;
-	height: 110px;
-	float: left;
+	/*margin-left: 250px;*/
+	margin-bottom: 10px;
+	width: 50%;
+	height: 20%;
+	/*float: left;*/
 	opacity: 1;
 }
 
 #whole{
 	background-color: #ccff99;
+	margin-top: 0px;
 }
 
 #top {
@@ -80,9 +100,19 @@ table tr td {
 	background-color: white;
 }
 
+#timetableid {
+	margin-top: 30px;
+}
+
+
+.timetabletd:hover {
+	background-color: #ff9933;
+
+}
+
 #innertable {
 	margin-left: 20px;
-	margin-top: 40px;
+	margin-top: 60px;
 }
 
 #GoogleCalendar {
@@ -99,3 +129,169 @@ table tr td {
 	width: 100%;
 	height: 500px;
 }
+
+.fa {
+    padding: 20px;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.fa-facebook {
+	background-color: #3B5998;
+    color: white;
+}
+
+.fa-instagram {
+	background-color: #fb3958;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.fa-linkedin {
+	background-color: #007bb6;
+	color: white;
+	margin-left: 10px;
+	margin-bottom: 30px;
+}
+
+.fa-twitter {
+	background-color: #00aced;
+	color: white;
+	margin-left: 10px;
+	margin-bottom: 30px;
+}
+
+
+.animatedbtn {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.animatedbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.animatedbtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -5px;
+  transition: 0.5s;
+}
+
+.animatedbtn:hover span {
+  padding-right: 25px;
+}
+
+.animatedbtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+/*--------------IMAGE SLIDESHOW----------------*/
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1200px;
+  position: relative;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+/*-----------------------IMAGE SLIDESHOW ENDS-------------------*/
